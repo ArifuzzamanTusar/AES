@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Encryption & Decryption</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Glassmorphism Effect and Background */
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .glass {
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.651);
+        }
+
+        /* Text Fields with White Opacity and Black Input */
+        textarea, input {
+            background-color: rgba(255, 255, 255, 0.2); /* White opacity background */
+            color: black; /* Black text for input */
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        textarea:focus, input:focus {
+            outline: none;
+            border-color: rgba(79, 70, 229, 0.8);
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5);
+        }
+
+        /* Scroll bar styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-black">
+
+    <div class="glass  p-8 rounded-xl w-full max-w-xl shadow-lg space-y-6">
+        <h2 class="text-3xl font-semibold text-center mb-6">AES Encryption & Decryption</h2>
+
+        <!-- Text Area for Text Input -->
+        <label class="block text-sm font-medium text-gray-200">Enter Text:</label>
+        <textarea id="textInput" class="w-full p-4 mt-2 rounded-lg focus:ring focus:ring-blue-300" rows="4"></textarea>
+
+        <!-- Password Input -->
+        <label class="block text-sm font-medium text-gray-200 mt-4">Enter Secret Password:</label>
+        <input id="passwordInput" type="text" class="w-full p-4 mt-2 rounded-lg focus:ring focus:ring-blue-300">
+
+        <!-- Encrypt/Decrypt Buttons -->
+        <div class="mt-6 flex justify-center gap-4">
+            <button onclick="encryptText()" class="bg-red-600 text-white py-6 w-full rounded-lg hover:bg-red-700 transition duration-300">Encrypt</button>
+            <button onclick="decryptText()" class="bg-green-600 text-white py-2 w-full rounded-lg hover:bg-green-700 transition duration-300">Decrypt</button>
+        </div>
+
+        <!-- Output Area -->
+        <label class="block text-sm font-medium text-gray-200 mt-6">Output:</label>
+        <textarea id="output" class="w-full p-4 mt-2 rounded-lg  text-white border-gray-600" rows="4" readonly></textarea>
+    </div>
+
+    <!-- Link to External JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
